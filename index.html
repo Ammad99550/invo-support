@@ -692,9 +692,40 @@ function sendChat(){
 }
 
 /* FORM */
-function submitForm(){
-  if(!document.getElementById('fname').value.trim()||!document.getElementById('femail').value.trim()||!document.getElementById('fdesc').value.trim()){alert('Please fill in name, email and issue description.');return;}
-  document.getElementById('formBody').style.display='none';document.getElementById('formSuccess').style.display='block';
+async function submitForm() {
+
+  const firstName = document.getElementById('fname').value.trim();
+  const lastName  = document.getElementById('lname').value.trim();
+  const email     = document.getElementById('femail').value.trim();
+  const issueType = document.getElementById('ftype').value;
+  const message   = document.getElementById('fdesc').value.trim();
+
+  if (!firstName || !email || !message) {
+    alert('Please fill in name, email and issue description.');
+    return;
+  }
+
+  try {
+
+    await emailjs.send(
+      'service_wza3alo',
+      'template_tteud48',
+      {
+        first_name: firstName,
+        last_name: lastName,
+        user_email: email,
+        issue_type: issueType,
+        message: message
+      }
+    );
+
+    document.getElementById('formBody').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+
+  } catch (error) {
+    console.error(error);
+    alert('Failed to send message. Please try again.');
+  }
 }
 
 /* SEARCH */
@@ -710,6 +741,11 @@ function toggleMenu(){
     right.style.cssText='display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:rgba(3,6,15,.97);padding:0 6% 24px;gap:10px;border-bottom:1px solid rgba(56,189,248,.12);z-index:299;margin-top:164px';
   } else {links.style.display='none';right.style.display='none'}
 }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+emailjs.init("OGN3XleKOUMdoefYu");
 </script>
 </body>
 </html>
