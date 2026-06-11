@@ -589,7 +589,7 @@ footer p{font-size:13px;color:var(--muted)}
           <div class="fg"><label>Last name</label><input type="text" placeholder="Smith" id="lname"/></div>
         </div>
         <div class="fg"><label>Email address</label><input type="email" placeholder="john@example.com" id="femail"/></div>
-        <div class="fg"><label>Issue type</label><select id="ftype"><option value="">Select a topic…</option><option>Account & login</option><option>Billing & payments</option><option>Invoice creation</option><option>App crashes / bugs</option><option>Feature request</option><option>Other</option></select></div>
+        <div class="fg"><label>Issue type</label><select id="ftype"><option value="">Select a topic…</option><option>Account & login</option><option>Invoice creation</option><option>App crashes / bugs</option><option>Feature request</option><option>Other</option></select></div>
         <div class="fg"><label>Describe your issue</label><textarea placeholder="The more detail you give, the faster we can help…" id="fdesc"></textarea></div>
         <button class="sub-btn" onclick="submitForm()">Send Message →</button>
       </div>
@@ -602,40 +602,6 @@ footer p{font-size:13px;color:var(--muted)}
   </div>
 </section>
 
-<!-- ══ DOMAIN GUIDE ══ -->
-<section class="guide-sec rv" id="guide">
-  <div class="guide-inner">
-    <div class="eye" style="justify-content:center">Domain setup</div>
-    <h2 class="sh2" style="text-align:center">Connect your GoDaddy domain</h2>
-    <p class="sp" style="margin:0 auto 0;text-align:center">Point your domain to this support site in 6 steps.</p>
-    <div class="steps">
-      <div class="step rv d1">
-        <div class="step-num-scene"><div class="step-num-box"><div class="step-nf snff">1</div><div class="step-nf snfb">1</div><div class="step-nf snfl">1</div><div class="step-nf snfr">1</div></div></div>
-        <div class="step-b"><h3>Log in to GoDaddy</h3><p>Go to <strong>godaddy.com</strong> → sign in → click your name → <strong>My Products</strong> → find your domain → click <strong>DNS</strong>.</p></div>
-      </div>
-      <div class="step rv d2">
-        <div class="step-num-scene"><div class="step-num-box" style="animation-delay:.5s"><div class="step-nf snff">2</div><div class="step-nf snfb">2</div><div class="step-nf snfl">2</div><div class="step-nf snfr">2</div></div></div>
-        <div class="step-b"><h3>Update the A record</h3><p>Find the <code>A</code> record with name <code>@</code>. Edit the value to your hosting server's IP. Set TTL to <code>600</code>.</p></div>
-      </div>
-      <div class="step rv d1">
-        <div class="step-num-scene"><div class="step-num-box" style="animation-delay:1s"><div class="step-nf snff">3</div><div class="step-nf snfb">3</div><div class="step-nf snfl">3</div><div class="step-nf snfr">3</div></div></div>
-        <div class="step-b"><h3>Add a CNAME for www</h3><p>Add <code>CNAME</code> record: name = <code>www</code>, value = your root domain. Makes both www and non-www work.</p></div>
-      </div>
-      <div class="step rv d2">
-        <div class="step-num-scene"><div class="step-num-box" style="animation-delay:1.5s"><div class="step-nf snff">4</div><div class="step-nf snfb">4</div><div class="step-nf snfl">4</div><div class="step-nf snfr">4</div></div></div>
-        <div class="step-b"><h3>Enable SSL</h3><p>GoDaddy → Security → SSL Certificate. Enable the free SSL for <code>https://</code> trust and security.</p></div>
-      </div>
-      <div class="step rv d1">
-        <div class="step-num-scene"><div class="step-num-box" style="animation-delay:2s"><div class="step-nf snff">5</div><div class="step-nf snfb">5</div><div class="step-nf snfl">5</div><div class="step-nf snfr">5</div></div></div>
-        <div class="step-b"><h3>Wait for propagation</h3><p>DNS changes take 30 min to 48 hours. Check progress at <strong>dnschecker.org</strong>.</p></div>
-      </div>
-      <div class="step rv d2">
-        <div class="step-num-scene"><div class="step-num-box" style="animation-delay:2.5s"><div class="step-nf snff">6</div><div class="step-nf snfb">6</div><div class="step-nf snfl">6</div><div class="step-nf snfr">6</div></div></div>
-        <div class="step-b"><h3>Update your Flutter app</h3><p>Use <code>url_launcher</code> to open <code>https://support.yourdomain.com</code> in-app when the user taps Support in Settings.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ══ APP BANNER ══ -->
 <section class="app-banner rv">
